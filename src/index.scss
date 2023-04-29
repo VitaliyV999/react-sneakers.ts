@@ -68,6 +68,20 @@ header {
   h1 {
     margin: 0;
   }
+  .arrowUpBtn {
+    border-width: 0;
+    padding: 0;
+  }
+  .arrowUp {
+    position: absolute;
+    margin: 10px;
+    left: 46%;
+    padding: 0 25px;
+    border-radius: 50px;
+    height: 25px;
+    box-shadow: 0 4px 6px rgba(65, 132, 144, 10%), 0 1px 3px rgba(0, 0, 0, 8%);
+    cursor: pointer;
+  }
 }
 
 .search-block {
@@ -82,4 +96,6 @@ header {
     width: 200px;
   }
 }
+
+
 

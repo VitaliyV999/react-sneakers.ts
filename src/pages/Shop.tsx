@@ -3,15 +3,16 @@ import Header from "../components/Header";
 import Drawer from "../components/Drawer/Drawer";
 import {useState, useEffect} from "react";
 
-type Item = {
+export type Item = {
     title: string;
     price: string;
     imageUrl: string;
 }
+
 function Shop() {
     const [items, setItems] = useState<Item[]>([]);
     const [cartOpened, setCartOpened] = useState(false);
-    const [cartItems, setCartItems] = useState([]);
+    const [cartItems, setCartItems] = useState<Item[]>([]);
 
 
     useEffect(() => {
@@ -24,7 +25,7 @@ function Shop() {
 
     return (
         <div className="wrapper clear">
-            {cartOpened && <Drawer onClickCart = {() => setCartOpened(false)} />}
+            {cartOpened && <Drawer onClickCart = {() => setCartOpened(false)} items={cartItems} />}
             <Header onClickCart={() => setCartOpened(true)} />
             <div className="content p-40">
                 <div className="d-flex align-center justify-between mb-40">
@@ -40,10 +41,13 @@ function Shop() {
                             title={obj.title}
                             price={obj.price}
                             imageUrl={obj.imageUrl}
-                            onClickFavourite={() => console.log('added to fav')}
+                            addCartItem={() => setCartItems([...cartItems, obj])}
                         />
                     ))}
                 </div>
+                <button className='arrowUpBtn' onClick={() => window.scroll(0,0) }>
+                    <img className='arrowUp' src="/img/arrowUp.svg" alt="up"/>
+                </button>
             </div>
         </div>
     );

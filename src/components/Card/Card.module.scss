@@ -7,6 +7,13 @@
   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
   margin-bottom: 25px;
 
+  .plusButton {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+  }
 
   &:hover {
     box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.07);
