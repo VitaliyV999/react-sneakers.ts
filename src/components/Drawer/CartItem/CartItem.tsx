@@ -8,12 +8,9 @@ export type CartItemProps = {
 }
 
 const CartItem = (props: CartItemProps) => {
-    console.log(props.imageUrl)
     return (
             <div className={styles.cartItem}>
-                <div style={{backgroundImage: props.imageUrl}}
-                     className={styles.cartItemImg}>
-                </div>
+                <img src={props.imageUrl} className={styles.cartItemImg} alt="Sneakers"/>
                 <div className="mr-20 flex">
                     <p className="mb-5">{props.title}</p>
                     <b>{props.price}</b>

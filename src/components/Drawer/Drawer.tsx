@@ -13,7 +13,7 @@ const Drawer = (props: DrawerProps) => {
     return (
         <div className={styles.overlay}>
             <div className={styles.drawer}>
-                <h2 className="d-flex justify-between mb-25">Корзина <button className={styles.closeBtn}><img onClick={props.onClickCart}
+                <h2 className="d-flex justify-between mb-25">Корзина<button className={styles.closeBtn}><img onClick={props.onClickCart}
                                                                                   src="/img/btn-close.svg" alt="Close"/></button></h2>
                 <div className={styles.items}>
                     {props.items.map((obj) => <CartItem price={obj.price} title={obj.title} imageUrl={obj.imageUrl} />)}

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import styles from './Card.module.scss';
+import cartItem from "../Drawer/CartItem/CartItem";
 
 type CardProps = {
     title: string;
@@ -14,10 +15,13 @@ const Card = (props: CardProps) => {
 
     const onClickPlus = () => {
         setIsAdded(!isAdded)
+        if (!isAdded === true) {
+            console.log('done')
+        }
     }
 
     const onClickHeart = () => {
-        setIsFavourite(!isFavourite)
+        setIsFavourite(!isFavourite);
     }
 
     return (

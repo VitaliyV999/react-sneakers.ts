@@ -7,6 +7,7 @@ export type Item = {
     title: string;
     price: string;
     imageUrl: string;
+    id: string;
 }
 
 function Shop() {
@@ -14,6 +15,9 @@ function Shop() {
     const [cartOpened, setCartOpened] = useState(false);
     const [cartItems, setCartItems] = useState<Item[]>([]);
 
+    function deleteCartItem(id: string) {
+
+    }
 
     useEffect(() => {
         fetch('https://640e020eb07afc3b0dbc8f12.mockapi.io/items').then(res => {
